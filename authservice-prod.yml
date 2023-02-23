@@ -2,29 +2,31 @@ server:
   port: 0
 
 spring:
-  servlet:
-    multipart:
-      max-file-size: 10MB
-      max-request-size: 10MB
-  jpa:
-    show-sql: false
-    hibernate:
-      ddl-auto: update
-    properties:
-      hibernate:
-        format_sql: true
-  application:
-    name: ${NAME}
+  redis:
+    host: ${REDIS_HOST}
+    port: ${REDIS_PORT}
+    key:
+      prefix: ${REDIS_KEY_PREFIX}
   rabbitmq:
     host: ${RABBITMQ_HOST}
     port: ${RABBITMQ_PORT}
     username: ${RABBITMQ_USER_NAME}
     password: ${RABBITMQ_USER_PASS}
+
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
     username: ${DB_USER}
     password: ${DB_PASS}
     url: ${DB_URL}
+  jpa:
+    show-sql: false
+    hibernate:
+      ddl-auto: none
+    properties:
+      hibernate:
+        format_sql: false
+  application:
+    name: ${NAME}
 
 eureka:
   instance:
@@ -35,15 +37,7 @@ eureka:
     service-url:
       defaultZone: ${EUREKA_SERVER}
 
-cloud:
-  aws:
-    credentials:
-      accessKey: ${ACCESS_KEY}
-      secretKey: ${SECRET_KEY}
-    s3:
-      bucket: ${AWS_S3_BUCKET}
-      profile-prefix: ${AWS_S3_PROFILE_PREFIX}
-    region:
-      static: ${AWS_REGION_STATIC}
-    stack:
-      auto: false
+jwt:
+  secret-key: ${JWT_SECRET_KEY}
+  access-token-expiration-time: ${JWT_ACCESS_TOKEN_EXPIRATION_TIME}
+  refresh-token-expiration-time: ${JWT_REFRESH_TOKEN_EXPIRATION_TIME}

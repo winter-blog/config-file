@@ -12,10 +12,10 @@ spring:
   application:
     name: ${NAME}
   rabbitmq:
-    host: ${REDIS_HOST}
-    port: ${REDIS_PORT}
-    username: ${REDIS_USER_NAME}
-    password: ${REDIS_USER_PASS}
+    host: ${RABBITMQ_HOST}
+    port: ${RABBITMQ_PORT}
+    username: ${RABBITMQ_USER_NAME}
+    password: ${RABBITMQ_USER_PASS}
   cloud:
     gateway:
       routes:
