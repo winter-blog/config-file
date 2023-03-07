@@ -7,6 +7,9 @@ spring:
     port: ${REDIS_PORT}
     key:
       prefix: ${REDIS_KEY_PREFIX}
+  cache:
+    type: redis
+    
   rabbitmq:
     host: ${RABBITMQ_HOST}
     port: ${RABBITMQ_PORT}
@@ -41,6 +44,3 @@ jwt:
   secret-key: ${JWT_SECRET_KEY}
   access-token-expiration-time: ${JWT_ACCESS_TOKEN_EXPIRATION_TIME}
   refresh-token-expiration-time: ${JWT_REFRESH_TOKEN_EXPIRATION_TIME}
-
-auth:
-  version: version 1.0
