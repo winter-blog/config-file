@@ -30,6 +30,14 @@ spring:
         - id: member-service
           uri: lb://MEMBER-SERVICE
           predicates:
+            - Path=/member-service/api/*/members/check/**
+            - Method=GET
+          filters:
+            - RemoveRequestHeader=Cookie
+            - RewritePath=/member-service/(?<segment>.*), /$\{segment}    
+        - id: member-service
+          uri: lb://MEMBER-SERVICE
+          predicates:
             - Path=/member-service/api/*/members/**
           filters:
             - RemoveRequestHeader=Cookie
