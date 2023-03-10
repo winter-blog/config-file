@@ -14,6 +14,14 @@ spring:
     username: ${RABBITMQ_USER_NAME}
     password: ${RABBITMQ_USER_PASS}
 
+  kafka:
+    consumer:
+      bootstrap-servers: ${KAFKA_SERVER}
+      group-id: ${KAFKA_CONSUMER_GROUP_ID}
+      auto-offset-reset: earliest
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
     username: ${DB_USER}
