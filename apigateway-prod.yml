@@ -92,9 +92,10 @@ spring:
             # - X-AUTH-TOKEN
             # - X-CSRF-TOKEN
             allowedMethods:
-              - PUT
               - GET
               - POST
+              - PUT
+              - PATCH            
               - DELETE
               - OPTIONS
 
