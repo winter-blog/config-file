@@ -79,7 +79,10 @@ spring:
       globalcors:
         cors-configurations:
           '[/**]':
-            allowedOrigins: ${ALLOWED_ORIGINS}
+            allowedOrigins: 
+              - http://localhost:3000
+              - http://ec2-3-34-53-11.ap-northeast-2.compute.amazonaws.com:8070
+              - http://3.34.53.11:8070
             allow-credentials: true
             allowedHeaders: '*'
             # allowedHeaders: '*'
