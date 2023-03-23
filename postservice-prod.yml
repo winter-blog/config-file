@@ -42,7 +42,7 @@ cloud:
       secretKey: ${AWS_SECRET_KEY}
     s3:
       bucket: ${AWS_S3_BUCKET}
-      profile-prefix: ${AWS_S3_PROFILE_PREFIX}
+      post-prefix: ${AWS_S3_POST_PREFIX}
       base-url: ${AWS_S3_BASE_URL}
     region:
       static: ${AWS_REGION_STATIC}
