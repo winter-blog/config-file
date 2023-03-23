@@ -43,8 +43,8 @@ eureka:
 cloud:
   aws:
     credentials:
-      accessKey: ${ACCESS_KEY}
-      secretKey: ${SECRET_KEY}
+      accessKey: ${AWS_ACCESS_KEY}
+      secretKey: ${AWS_SECRET_KEY}
     s3:
       bucket: ${AWS_S3_BUCKET}
       profile-prefix: ${AWS_S3_PROFILE_PREFIX}
