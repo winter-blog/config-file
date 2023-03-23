@@ -80,7 +80,7 @@ spring:
             - Path=/post-service/api/*/posts/**
           filters:
             - RemoveRequestHeader=Cookie
-            - RewritePath=/auth-service/(?<segment>.*), /$\{segment}            
+            - RewritePath=/post-service/(?<segment>.*), /$\{segment}            
             - AccessTokenAuthorizationHeaderFilter
       default-filters:
         - DedupeResponseHeader=Access-Control-Allow-Origin Access-Control-Allow-Credentials
