@@ -48,3 +48,11 @@ cloud:
       static: ${AWS_REGION_STATIC}
     stack:
       auto: false
+
+post:
+  pagination:
+    default-size: ${POST_PAGINATION_DEFAULT_SIZE}
+  title:
+    max-length: ${POST_TITLE_MAX_LENGTH}
+  contents:
+    max-length: ${POST_CONTENTS_MAX_LENGTH}
