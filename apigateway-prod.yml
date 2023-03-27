@@ -84,6 +84,14 @@ spring:
         - id: post-service
           uri: lb://POST-SERVICE
           predicates:
+            - Path=/post-service/api/*/posts
+            - Method=GET
+          filters:
+            - RemoveRequestHeader=Cookie
+            - RewritePath=/post-service/(?<segment>.*), /$\{segment}            
+        - id: post-service
+          uri: lb://POST-SERVICE
+          predicates:
             - Path=/post-service/api/*/posts/**
           filters:
             - RemoveRequestHeader=Cookie
