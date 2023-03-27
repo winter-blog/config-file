@@ -31,7 +31,14 @@ spring:
             - Method=POST
           filters:
             - RemoveRequestHeader=Cookie
-            - RewritePath=/member-service/(?<segment>.*), /$\{segment}    
+            - RewritePath=/member-service/(?<segment>.*), /$\{segment} 
+        - id: member-service
+          uri: lb://MEMBER-SERVICE
+          predicates:
+            - Path=/member-service/api/*/members/internal/**
+          filters:
+            - RemoveRequestHeader=Cookie
+            - RewritePath=/member-service/(?<segment>.*), /$\{segment}            
         - id: member-service
           uri: lb://MEMBER-SERVICE
           predicates:
