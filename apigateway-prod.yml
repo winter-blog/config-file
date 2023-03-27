@@ -97,6 +97,14 @@ spring:
             - RemoveRequestHeader=Cookie
             - RewritePath=/post-service/(?<segment>.*), /$\{segment}            
             - AccessTokenAuthorizationHeaderFilter
+        - id: post-service
+          uri: lb://POST-SERVICE
+          predicates:
+            - Path=/post-service/api/*/images/**
+          filters:
+            - RemoveRequestHeader=Cookie
+            - RewritePath=/post-service/(?<segment>.*), /$\{segment}            
+            - AccessTokenAuthorizationHeaderFilter
       default-filters:
         - DedupeResponseHeader=Access-Control-Allow-Origin Access-Control-Allow-Credentials
       globalcors:
