@@ -110,10 +110,10 @@ spring:
       globalcors:
         cors-configurations:
           '[/**]':
-            allowedOrigins: "*"
-              # - http://localhost:3000
-              # - http://ec2-3-34-53-11.ap-northeast-2.compute.amazonaws.com:8070
-              # - http://3.39.159.26:3000
+            allowedOrigins: 
+              - http://localhost:3000
+              - http://ec2-3-34-53-11.ap-northeast-2.compute.amazonaws.com:8070
+              - http://3.39.159.26:3000
             allow-credentials: true
             allowedHeaders: "*"
             # allowedHeaders: '*'
