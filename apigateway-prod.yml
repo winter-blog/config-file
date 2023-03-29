@@ -111,7 +111,7 @@ spring:
               - http://localhost:3000
               - http://ec2-3-34-53-11.ap-northeast-2.compute.amazonaws.com:8070
               - http://3.39.159.26:3000
-              - http://52.79.183.224:80
+              - http://52.79.183.224
             allow-credentials: true
             allowedHeaders: '*'
             # allowedHeaders: '*'
