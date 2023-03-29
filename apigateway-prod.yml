@@ -51,7 +51,6 @@ spring:
           uri: lb://AUTH-SERVICE
           predicates:
             - Path=/auth-service/login
-            - Method=POST
           filters:
             - RemoveRequestHeader=Cookie
             - RewritePath=/auth-service/(?<segment>.*), /$\{segment}
@@ -114,7 +113,6 @@ spring:
               - http://localhost:3000
               - http://ec2-3-34-53-11.ap-northeast-2.compute.amazonaws.com:8070
               - http://3.39.159.26:3000
-              - http://3.39.159.26
             allow-credentials: true
             allowedHeaders: '*'
             # allowedHeaders: '*'
