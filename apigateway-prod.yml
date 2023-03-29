@@ -58,7 +58,6 @@ spring:
           uri: lb://AUTH-SERVICE
           predicates:
             - Path=/auth-service/logout
-            - Method=POST
           filters:
             - RemoveRequestHeader=Cookie
             - RewritePath=/auth-service/(?<segment>.*), /$\{segment}
@@ -67,7 +66,6 @@ spring:
           uri: lb://AUTH-SERVICE
           predicates:
             - Path=/auth-service/refresh-token
-            - Method=POST
           filters:
             - RemoveRequestHeader=Cookie
             - RewritePath=/auth-service/(?<segment>.*), /$\{segment}
